@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="IDEAL">
+<listeners>
+        <listener class-name="com.qa.tests.IDX_DRNA"/>
+</listeners>
+  <test thread-count="5" name="IDX_DRNA">
+    <classes>
+      <class name="com.qa.tests.IDX_DRNA"/>
+     <!-- <class name="com.qa.tests.GetAPItest"/> -->
+    </classes>
+  </test> <!-- dxapi -->
+</suite> <!-- IDEAL -->
