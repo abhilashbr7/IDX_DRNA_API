@@ -32,7 +32,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 	String url;
 	String token,credentials,Searchreasonbyinputparameter,CitizenSearch,CitizenSearchTickets,CitizenSearchTicketTransaction;
 	String SearchReasonByClient,CitizenSearchShipRenewal,CitizenSearchShipFees,CitizenDetails,CitizenRetryAgency;
-	String citizen_referenceId,citizen_referenceId_tickets,citizen_referenceId_ticket_transaction,citizen_referenceId_ShipRenewal;
+	String citizen_referenceId,citizen_referenceId_tickets,citizen_referenceId_ticket_transaction,citizen_referenceId_ShipRenewal,SearchReasonId;
 	CloseableHttpResponse closeableHttpResponse;
 
 	@BeforeMethod
@@ -131,7 +131,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		System.out.println("JSON response from API---->" + responseJson);
 
 //		// To get value from JSON Array
-		String SearchReasonId = TestUtil.getValueByjpath(responseJson, "/searchReasons[0]/id");
+		SearchReasonId = TestUtil.getValueByjpath(responseJson, "/searchReasons[0]/id");
 		System.out.println("Response From Json is : " + SearchReasonId);
 
 		// 3.All Headers
@@ -151,7 +151,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		restclient = new RestClient();
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("content-type", "application/json");
-		headermap.put("searchReasonId", "10195");
+		headermap.put("searchReasonId", SearchReasonId);
 		headermap.put("searchType", "CITIZEN");
 		headermap.put("Authorization", "Bearer " + token);
 		
@@ -212,7 +212,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		System.out.println("JSON response from API---->" + responseJson);
 
 //		// To get value from JSON Array
-		String citizen_referenceId = TestUtil.getValueByjpath(responseJson, "/citizen_referenceId");
+		citizen_referenceId = TestUtil.getValueByjpath(responseJson, "/citizen_referenceId");
 		System.out.println("Fee Response From Json is : " + citizen_referenceId);
 
 		// 3.All Headers
@@ -447,7 +447,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		restclient = new RestClient();
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("content-type", "application/json");
-		headermap.put("referenceId", "7853d193-3ff8-4080-b2a3-71d713bb63fc");
+		headermap.put("referenceId", citizen_referenceId);
 		headermap.put("agencyCode", "DRNA");
 		headermap.put("Authorization", "Bearer " + token);
 
