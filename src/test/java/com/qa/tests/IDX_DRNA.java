@@ -194,7 +194,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		
 
 		String jsonpayload = "{\r\n"
-				+ "  \"searchReasonId\": 10195,\r\n"
+				+ "  \"searchReasonId\": \"" + SearchReasonId + "\",\r\n"
 				+ "  \"ssn\": \"581-80-9555\",\r\n"
 				+ "  \"registrationNumber\": \"PR0566EE\"\r\n"
 				+ "}";
@@ -235,7 +235,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		headermap.put("Authorization", "Bearer " + token);
 		
 		String jsonpayload = "{\r\n"
-				+ "  \"searchReasonId\": 10196,\r\n"
+				+ "  \"searchReasonId\": \"" + SearchReasonId +"\",\r\n"
 				+ "  \"registrationNumber\": \"PR0033EE\"\r\n"
 				+ "}";
 		
@@ -275,7 +275,7 @@ public class IDX_DRNA extends TestBase implements IExecutionListener {
 		headermap.put("Authorization", "Bearer " + token);
 		
 		String jsonpayload = "{\r\n"
-				+ "  \"searchReasonId\": 10197,\r\n"
+				+ "  \"searchReasonId\": \"" + SearchReasonId +"\",\r\n"
 				+ "  \"registrationNumber\": \"PR0566EE\",\r\n"
 				+ "  \"transactionDate\": \"2024-01-31\",\r\n"
 				+ "  \"receiptNumber\": \"0000000\",\r\n"
